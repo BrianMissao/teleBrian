@@ -1,6 +1,6 @@
 package aplicacao;
 
-import dominio.CalculaRendaTotal;
+import dominio.CalculaFaturamento;
 import dominio.entidades.Assinante;
 import dominio.entidades.Plano;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeNomeInvalido;
@@ -15,7 +15,6 @@ public class TeleBrian {
     public static void main(String[] args) throws ExcecaoDeNomeInvalido{
         cadastrarAssinante();
         cadastrarAssinante();
-        cadastrarAssinante();
         exibirRelatorio();
     }
 
@@ -27,8 +26,8 @@ public class TeleBrian {
     }
 
     private static void exibirRelatorio() {
-        gerenciadorDeAssinantes.exibirAssinantes();
-        System.out.println("Renda total da operadora: "+ CalculaRendaTotal.calcular(gerenciadorDeAssinantes.getAssinantes())+"R$");
+        gerenciadorDeAssinantes.exibirInformacoesDeTodosOsAssinantes();
+        System.out.println("Faturamento da operadora: "+ CalculaFaturamento.calcular(gerenciadorDeAssinantes.getAssinantes())+"R$");
     }
 
     private static String obterDados(String mensagemAoUsuario) {

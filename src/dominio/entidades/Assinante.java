@@ -18,11 +18,24 @@ public class Assinante {
         }
     }
 
+    @Override
+    public String toString() {
+        return nome + ", contratou o plano " + plano.getNome() + ", no valor de " + plano.getValor() + "R$";
+    }
+
     public String getNome() {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public Plano getPlano() {
         return plano;
+    }
+
+    public void setPlano(Plano plano) {
+        this.plano = plano;
     }
 }

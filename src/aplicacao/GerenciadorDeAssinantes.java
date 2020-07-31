@@ -1,6 +1,7 @@
 package aplicacao;
 
 import dominio.entidades.Assinante;
+import dominio.entidades.Plano;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -15,10 +16,36 @@ public class GerenciadorDeAssinantes {
         assinantes.add(assinante);
     }
 
-    public void exibirAssinantes() {
+    public void exibirInformacoesDeTodosOsAssinantes() {
         System.out.println("*Assinantes");
-        assinantes.forEach(assinante -> System.out.println(assinante.getNome()+", contratou o plano "+assinante.getPlano().getNome()+", no valor de "+assinante.getPlano().getValor()+"R$"));
+        assinantes.forEach(System.out::println);
     }
+
+    public void exibirInformacoesDeUmAssinanteEspecifico(String nomeDoAssinanteAExibir) {
+        Assinante assinante = buscarAssinante(nomeDoAssinanteAExibir);
+        String mensagemAoUsuario = assinante != null ? assinante.toString() : "O assinante " + nomeDoAssinanteAExibir + " não está cadastrado.";
+        System.out.println(mensagemAoUsuario);
+    }
+
+    public void removerAssinante(String nomeDoAssinanteARemover) {
+        Assinante assinanteARemover = buscarAssinante(nomeDoAssinanteARemover);
+        if (assinanteARemover != null) {
+            assinantes.remove(assinanteARemover);
+            System.out.println("O assinante " + nomeDoAssinanteARemover+" foi removido com sucesso.");
+            return;
+        }
+        System.out.println("O assinante " + nomeDoAssinanteARemover + " não está cadastrado, portanto não pode ser removido.");
+    }
+
+    public Assinante buscarAssinante(String nomeDoAssinanteABuscar) {
+        for (Assinante assinante : assinantes) {
+            if (assinante.getNome().equals(nomeDoAssinanteABuscar)) {
+                return assinante;
+            }
+        }
+        return null;
+    }
+
     public List<Assinante> getAssinantes() {
         return Collections.unmodifiableList(assinantes);
     }
