@@ -28,9 +28,7 @@ public class GerenciadorDeAssinantes {
     }
 
     public void removerAssinante(String nomeDoAssinanteARemover) {
-        Assinante assinanteARemover = buscarAssinante(nomeDoAssinanteARemover);
-        if (assinanteARemover != null) {
-            assinantes.remove(assinanteARemover);
+        if (assinantes.removeIf(assinante -> assinante.getNome().equals(nomeDoAssinanteARemover))) {
             System.out.println("O assinante " + nomeDoAssinanteARemover+" foi removido com sucesso.");
             return;
         }
