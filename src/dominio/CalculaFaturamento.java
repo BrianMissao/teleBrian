@@ -8,6 +8,6 @@ import java.util.List;
 
 public class CalculaFaturamento {
     public static BigDecimal calcular(List<Assinante> assinantes) {
-        return assinantes.stream().map(assinante -> assinante.getPlano().getValor()).reduce(BigDecimal.ZERO, BigDecimal::add).setScale(2, RoundingMode.HALF_EVEN);
+        return assinantes.stream().map(assinante -> assinante.obterValorDoPlano()).reduce(BigDecimal.ZERO, BigDecimal::add).setScale(2, RoundingMode.HALF_EVEN);
     }
 }
