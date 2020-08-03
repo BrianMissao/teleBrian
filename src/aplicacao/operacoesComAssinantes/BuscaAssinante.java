@@ -4,19 +4,19 @@ import dominio.entidades.Assinante;
 
 import java.util.List;
 
-public class ProcuraPorUmAssinante {
+public class BuscaAssinante {
     private List<Assinante> assinantes;
 
-    public ProcuraPorUmAssinante(List<Assinante> assinantes) {
+    public BuscaAssinante(List<Assinante> assinantes) {
         this.assinantes = assinantes;
     }
 
-    public Assinante procurar(String nomeDoAssinanteABuscar) {
+    public String buscar(String nomeDoAssinanteABuscar) {
         for (Assinante assinante : assinantes) {
             if (assinante.getNome().equals(nomeDoAssinanteABuscar)) {
-                return assinante;
+                return assinante.toString();
             }
         }
-        return null;
+        return "O assinante "+nomeDoAssinanteABuscar+" não está cadastrado.";
     }
 }

@@ -2,7 +2,7 @@ package aplicacao;
 
 import aplicacao.operacoesComAssinantes.AdicionaAssinante;
 import aplicacao.operacoesComAssinantes.ExibeInformacoesDeTodosOsAssinantes;
-import aplicacao.operacoesComAssinantes.ProcuraPorUmAssinante;
+import aplicacao.operacoesComAssinantes.BuscaAssinante;
 import aplicacao.operacoesComAssinantes.RemoveAssinante;
 import dominio.CalculaFaturamento;
 import dominio.entidades.Assinante;
@@ -19,7 +19,7 @@ public class TeleBrian {
     private static AdicionaAssinante adicionaAssinante = new AdicionaAssinante(assinantes);
     private static ExibeInformacoesDeTodosOsAssinantes exibeInformacoesDeTodosOsAssinantes = new ExibeInformacoesDeTodosOsAssinantes(assinantes);
     private static RemoveAssinante removeAssinante = new RemoveAssinante(assinantes);
-    private static ProcuraPorUmAssinante procuraPorUmAssinante = new ProcuraPorUmAssinante(assinantes);
+    private static BuscaAssinante procuraPorUmAssinante = new BuscaAssinante(assinantes);
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws ExcecaoDeArgumentoInvalido {
@@ -32,7 +32,12 @@ public class TeleBrian {
         String nomeDoAssinante = obterDados("Informe o nome do assinante:");
         String nomeDoPlano = obterDados("Qual o plano este assinante aderiu?");
         BigDecimal valorDoPlano = new BigDecimal(obterDados("Qual o valor do plano?"));
-        adicionaAssinante.adicionar(new Assinante(nomeDoAssinante, new Plano(nomeDoPlano, valorDoPlano)));
+        Assinante assinanteAAdicionar = new Assinante(nomeDoAssinante, new Plano(nomeDoPlano, valorDoPlano));
+        if (adicionaAssinante.adicionar(assinanteAAdicionar)){
+            System.out.println("Assinante adicionado com sucesso!");
+            return;
+        }
+        System.out.println("Houve um erro ao tentar adicionar o assinante de nome"+nomeDoAssinante+".\nVerifique os dados e tente novamente.");
     }
 
     private static void exibirRelatorio() {

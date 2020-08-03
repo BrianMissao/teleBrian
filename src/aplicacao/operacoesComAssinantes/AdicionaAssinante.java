@@ -10,8 +10,8 @@ private List<Assinante> assinantes;
         this.assinantes = assinantes;
     }
 
-    public void adicionar(Assinante assinante) {
+    public boolean adicionar(Assinante assinante) {
         assinantes.add(assinante);
+        return true;
     }
-
 }
