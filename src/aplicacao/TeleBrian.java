@@ -1,9 +1,13 @@
 package aplicacao;
 
-import aplicacao.operacoesComAssinantes.AdicionaAssinante;
-import aplicacao.operacoesComAssinantes.ExibeInformacoesDeTodosOsAssinantes;
-import aplicacao.operacoesComAssinantes.BuscaAssinante;
-import aplicacao.operacoesComAssinantes.RemoveAssinante;
+import aplicacao.operacoesComAssinantes.adicionaAssinante.AdicionaAssinante;
+import aplicacao.operacoesComAssinantes.adicionaAssinante.AdicionaAssinanteConcreto;
+import aplicacao.operacoesComAssinantes.exibeInformacoesDeTodosOsAssinantes.ExibeInformacoesDeTodosOsAssinantes;
+import aplicacao.operacoesComAssinantes.exibeInformacoesDeTodosOsAssinantes.ExibeInformacoesDeTodosOsAssinantesConcreto;
+import aplicacao.operacoesComAssinantes.buscaAssinante.BuscaAssinante;
+import aplicacao.operacoesComAssinantes.buscaAssinante.BuscaAssinanteConcreto;
+import aplicacao.operacoesComAssinantes.removeAssinante.RemoveAssinante;
+import aplicacao.operacoesComAssinantes.removeAssinante.RemoveAssinanteConcreto;
 import dominio.CalculaFaturamento;
 import dominio.entidades.Assinante;
 import dominio.entidades.Plano;
@@ -17,10 +21,10 @@ import java.util.Scanner;
 
 public class TeleBrian {
     private static List<Assinante> assinantes = new ArrayList<>();
-    private static AdicionaAssinante adicionaAssinante = new AdicionaAssinante(assinantes);
-    private static ExibeInformacoesDeTodosOsAssinantes exibeInformacoesDeTodosOsAssinantes = new ExibeInformacoesDeTodosOsAssinantes(assinantes);
-    private static RemoveAssinante removeAssinante = new RemoveAssinante(assinantes);
-    private static BuscaAssinante procuraPorUmAssinante = new BuscaAssinante(assinantes);
+    private static AdicionaAssinante adicionaAssinante = new AdicionaAssinanteConcreto(assinantes);
+    private static ExibeInformacoesDeTodosOsAssinantes exibeInformacoesDeTodosOsAssinantes = new ExibeInformacoesDeTodosOsAssinantesConcreto(assinantes);
+    private static RemoveAssinante removeAssinante = new RemoveAssinanteConcreto(assinantes);
+    private static BuscaAssinante buscaAssinante = new BuscaAssinanteConcreto(assinantes);
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws ExcecaoDeArgumentoInvalido {
@@ -55,7 +59,7 @@ public class TeleBrian {
 
     private static void exibirRelatorioSobreUmAssinanteEspecifico(String assinanteAExibirRelatorio) {
         try {
-            String relatorioDoAssinante = new BuscaAssinante(assinantes).buscar(assinanteAExibirRelatorio).toString();
+            String relatorioDoAssinante = buscaAssinante.buscar(assinanteAExibirRelatorio).toString();
             System.out.println(relatorioDoAssinante);
         } catch (ExcecaoDeBuscaDeAssinante excecaoDeBusca) {
             System.out.println("Erro: "+excecaoDeBusca.getMessage());
