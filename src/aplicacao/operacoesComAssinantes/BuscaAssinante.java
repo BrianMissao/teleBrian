@@ -1,6 +1,7 @@
 package aplicacao.operacoesComAssinantes;
 
 import dominio.entidades.Assinante;
+import dominio.excecoesDeRegraDeNegocio.ExcecaoDeBuscaDeAssinante;
 
 import java.util.List;
 
@@ -11,12 +12,12 @@ public class BuscaAssinante {
         this.assinantes = assinantes;
     }
 
-    public String buscar(String nomeDoAssinanteABuscar) {
+    public Assinante buscar(String nomeDoAssinanteABuscar) throws ExcecaoDeBuscaDeAssinante {
         for (Assinante assinante : assinantes) {
             if (assinante.getNome().equals(nomeDoAssinanteABuscar)) {
-                return assinante.toString();
+                return assinante;
             }
         }
-        return "O assinante "+nomeDoAssinanteABuscar+" não está cadastrado.";
+        throw new ExcecaoDeBuscaDeAssinante("O assinante " + nomeDoAssinanteABuscar + " não está cadastrado");
     }
 }
