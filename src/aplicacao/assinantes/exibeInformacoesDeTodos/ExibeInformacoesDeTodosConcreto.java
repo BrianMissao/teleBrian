@@ -1,13 +1,13 @@
-package aplicacao.operacoesComAssinantes.exibeInformacoesDeTodosOsAssinantes;
+package aplicacao.assinantes.exibeInformacoesDeTodos;
 
 import dominio.entidades.assinante.Assinante;
 
 import java.util.List;
 
-public class ExibeInformacoesDeTodosOsAssinantesConcreto implements ExibeInformacoesDeTodosOsAssinantes {
+public class ExibeInformacoesDeTodosConcreto implements ExibeInformacoesDeTodos {
     private List<Assinante> assinantes;
 
-    public ExibeInformacoesDeTodosOsAssinantesConcreto(List<Assinante> assinantes) {
+    public ExibeInformacoesDeTodosConcreto(List<Assinante> assinantes) {
         this.assinantes = assinantes;
     }
 

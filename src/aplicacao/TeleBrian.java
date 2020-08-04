@@ -1,13 +1,13 @@
 package aplicacao;
 
-import aplicacao.operacoesComAssinantes.adicionaAssinante.AdicionaAssinante;
-import aplicacao.operacoesComAssinantes.adicionaAssinante.AdicionaAssinanteConcreto;
-import aplicacao.operacoesComAssinantes.exibeInformacoesDeTodosOsAssinantes.ExibeInformacoesDeTodosOsAssinantes;
-import aplicacao.operacoesComAssinantes.exibeInformacoesDeTodosOsAssinantes.ExibeInformacoesDeTodosOsAssinantesConcreto;
-import aplicacao.operacoesComAssinantes.buscaAssinante.BuscaAssinante;
-import aplicacao.operacoesComAssinantes.buscaAssinante.BuscaAssinanteConcreto;
-import aplicacao.operacoesComAssinantes.removeAssinante.RemoveAssinante;
-import aplicacao.operacoesComAssinantes.removeAssinante.RemoveAssinanteConcreto;
+import aplicacao.assinantes.adiciona.Adiciona;
+import aplicacao.assinantes.adiciona.AdicionaConcreto;
+import aplicacao.assinantes.exibeInformacoesDeTodos.ExibeInformacoesDeTodos;
+import aplicacao.assinantes.exibeInformacoesDeTodos.ExibeInformacoesDeTodosConcreto;
+import aplicacao.assinantes.busca.Busca;
+import aplicacao.assinantes.busca.BuscaConcreto;
+import aplicacao.assinantes.remove.Remove;
+import aplicacao.assinantes.remove.RemoveConcreto;
 import dominio.CalculaFaturamento;
 import dominio.entidades.assinante.Assinante;
 import dominio.entidades.Plano;
@@ -23,10 +23,10 @@ import java.util.Scanner;
 
 public class TeleBrian {
     private static List<Assinante> assinantes = new ArrayList<>();
-    private static AdicionaAssinante adicionaAssinante = new AdicionaAssinanteConcreto(assinantes);
-    private static ExibeInformacoesDeTodosOsAssinantes exibeInformacoesDeTodosOsAssinantes = new ExibeInformacoesDeTodosOsAssinantesConcreto(assinantes);
-    private static RemoveAssinante removeAssinante = new RemoveAssinanteConcreto(assinantes);
-    private static BuscaAssinante buscaAssinante = new BuscaAssinanteConcreto(assinantes);
+    private static Adiciona adiciona = new AdicionaConcreto(assinantes);
+    private static ExibeInformacoesDeTodos exibeInformacoesDeTodos = new ExibeInformacoesDeTodosConcreto(assinantes);
+    private static Remove remove = new RemoveConcreto(assinantes);
+    private static Busca busca = new BuscaConcreto(assinantes);
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws ExcecaoDeArgumentoInvalido {
@@ -50,7 +50,7 @@ public class TeleBrian {
     }
 
     private static void exibirRelatorio() {
-        exibeInformacoesDeTodosOsAssinantes.exibir();
+        exibeInformacoesDeTodos.exibir();
         System.out.println("Faturamento da operadora: " + CalculaFaturamento.calcular(assinantes) + "R$");
     }
 
@@ -61,7 +61,7 @@ public class TeleBrian {
 
     private static void exibirRelatorioSobreUmAssinanteEspecifico(String assinanteAExibirRelatorio) {
         try {
-            String relatorioDoAssinante = buscaAssinante.buscar(assinanteAExibirRelatorio).toString();
+            String relatorioDoAssinante = busca.buscar(assinanteAExibirRelatorio).toString();
             System.out.println(relatorioDoAssinante);
         } catch (ExcecaoDeBuscaDeAssinante excecaoDeBusca) {
             System.out.println("Erro: " + excecaoDeBusca.getMessage());
@@ -70,16 +70,15 @@ public class TeleBrian {
 
     private static void cadastrarAssinantePessoaFisica(String nomeDoAssinante, String nomeDoPlano, BigDecimal valorDoPlano) throws ExcecaoDeArgumentoInvalido{
         String cpfDoAssinante = obterDados("Informe o CPF do assinante:");
-        Assinante assinanteAAdicionar;
-        assinanteAAdicionar = new AssinantePessoaFisica(nomeDoAssinante, cpfDoAssinante, new Plano(nomeDoPlano, valorDoPlano));
-        adicionaAssinante.adicionar(assinanteAAdicionar);
+        Assinante assinanteAAdicionar = new AssinantePessoaFisica(nomeDoAssinante, cpfDoAssinante, new Plano(nomeDoPlano, valorDoPlano));
+        adiciona.adicionar(assinanteAAdicionar);
         System.out.println("Assinante adicionado com sucesso!");
     }
 
     private static void cadastrarAssinantePessoaJuridica(String nomeDoAssinante, String nomeDoPlano, BigDecimal valorDoPlano) throws ExcecaoDeArgumentoInvalido{
         String cnpjDoAssinante = obterDados("Informe o CNPJ do assinante:");
         Assinante assinanteAAdicionar = new AssinantePessoaJuridica(nomeDoAssinante, cnpjDoAssinante, new Plano(nomeDoPlano, valorDoPlano));
-        adicionaAssinante.adicionar(assinanteAAdicionar);
+        adiciona.adicionar(assinanteAAdicionar);
         System.out.println("Assinante adicionado com sucesso!");
     }
 }

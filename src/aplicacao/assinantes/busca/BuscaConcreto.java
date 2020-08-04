@@ -1,14 +1,14 @@
-package aplicacao.operacoesComAssinantes.buscaAssinante;
+package aplicacao.assinantes.busca;
 
 import dominio.entidades.assinante.Assinante;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeBuscaDeAssinante;
 
 import java.util.List;
 
-public class BuscaAssinanteConcreto implements BuscaAssinante {
+public class BuscaConcreto implements Busca {
     private List<Assinante> assinantes;
 
-    public BuscaAssinanteConcreto(List<Assinante> assinantes) {
+    public BuscaConcreto(List<Assinante> assinantes) {
         this.assinantes = assinantes;
     }
 

@@ -1,14 +1,14 @@
-package aplicacao.operacoesComAssinantes.removeAssinante;
+package aplicacao.assinantes.remove;
 
 import dominio.entidades.assinante.Assinante;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeRemocaoDeAssinante;
 
 import java.util.List;
 
-public class RemoveAssinanteConcreto implements RemoveAssinante {
+public class RemoveConcreto implements Remove {
     private List<Assinante> assinantes;
 
-    public RemoveAssinanteConcreto(List<Assinante> assinantes) {
+    public RemoveConcreto(List<Assinante> assinantes) {
         this.assinantes = assinantes;
     }
 
