@@ -1,6 +1,6 @@
 package aplicacao.operacoesComAssinantes.buscaAssinante;
 
-import dominio.entidades.Assinante;
+import dominio.entidades.assinante.Assinante;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeBuscaDeAssinante;
 
 public interface BuscaAssinante {

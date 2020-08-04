@@ -1,6 +1,6 @@
 package aplicacao.operacoesComAssinantes.exibeInformacoesDeTodosOsAssinantes;
 
-import dominio.entidades.Assinante;
+import dominio.entidades.assinante.Assinante;
 
 import java.util.List;
 

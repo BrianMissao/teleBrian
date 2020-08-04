@@ -1,6 +1,6 @@
 package aplicacao.operacoesComAssinantes.removeAssinante;
 
-import dominio.entidades.Assinante;
+import dominio.entidades.assinante.Assinante;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeRemocaoDeAssinante;
 
 import java.util.List;

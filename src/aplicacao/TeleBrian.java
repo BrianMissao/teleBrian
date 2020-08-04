@@ -9,8 +9,10 @@ import aplicacao.operacoesComAssinantes.buscaAssinante.BuscaAssinanteConcreto;
 import aplicacao.operacoesComAssinantes.removeAssinante.RemoveAssinante;
 import aplicacao.operacoesComAssinantes.removeAssinante.RemoveAssinanteConcreto;
 import dominio.CalculaFaturamento;
-import dominio.entidades.Assinante;
+import dominio.entidades.assinante.Assinante;
 import dominio.entidades.Plano;
+import dominio.entidades.assinante.AssinantePessoaFisica;
+import dominio.entidades.assinante.AssinantePessoaJuridica;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeBuscaDeAssinante;
 
@@ -36,15 +38,15 @@ public class TeleBrian {
     }
 
     private static void cadastrarAssinante() throws ExcecaoDeArgumentoInvalido {
+        String tipoDeAssinanteACadastrar = obterDados("Pessoa física ou jurídica?");
         String nomeDoAssinante = obterDados("Informe o nome do assinante:");
         String nomeDoPlano = obterDados("Qual o plano este assinante aderiu?");
         BigDecimal valorDoPlano = new BigDecimal(obterDados("Qual o valor do plano?"));
-        Assinante assinanteAAdicionar = new Assinante(nomeDoAssinante, new Plano(nomeDoPlano, valorDoPlano));
-        if (adicionaAssinante.adicionar(assinanteAAdicionar)) {
-            System.out.println("Assinante adicionado com sucesso!");
+        if (tipoDeAssinanteACadastrar.equals("fisica")) {
+            cadastrarAssinantePessoaFisica(nomeDoAssinante, nomeDoPlano, valorDoPlano);
             return;
         }
-        System.out.println("Houve um erro ao tentar adicionar o assinante de nome" + nomeDoAssinante + ".\nVerifique os dados e tente novamente.");
+        cadastrarAssinantePessoaJuridica(nomeDoAssinante, nomeDoPlano, valorDoPlano);
     }
 
     private static void exibirRelatorio() {
@@ -62,7 +64,22 @@ public class TeleBrian {
             String relatorioDoAssinante = buscaAssinante.buscar(assinanteAExibirRelatorio).toString();
             System.out.println(relatorioDoAssinante);
         } catch (ExcecaoDeBuscaDeAssinante excecaoDeBusca) {
-            System.out.println("Erro: "+excecaoDeBusca.getMessage());
+            System.out.println("Erro: " + excecaoDeBusca.getMessage());
         }
+    }
+
+    private static void cadastrarAssinantePessoaFisica(String nomeDoAssinante, String nomeDoPlano, BigDecimal valorDoPlano) throws ExcecaoDeArgumentoInvalido{
+        String cpfDoAssinante = obterDados("Informe o CPF do assinante:");
+        Assinante assinanteAAdicionar;
+        assinanteAAdicionar = new AssinantePessoaFisica(nomeDoAssinante, cpfDoAssinante, new Plano(nomeDoPlano, valorDoPlano));
+        adicionaAssinante.adicionar(assinanteAAdicionar);
+        System.out.println("Assinante adicionado com sucesso!");
+    }
+
+    private static void cadastrarAssinantePessoaJuridica(String nomeDoAssinante, String nomeDoPlano, BigDecimal valorDoPlano) throws ExcecaoDeArgumentoInvalido{
+        String cnpjDoAssinante = obterDados("Informe o CNPJ do assinante:");
+        Assinante assinanteAAdicionar = new AssinantePessoaJuridica(nomeDoAssinante, cnpjDoAssinante, new Plano(nomeDoPlano, valorDoPlano));
+        adicionaAssinante.adicionar(assinanteAAdicionar);
+        System.out.println("Assinante adicionado com sucesso!");
     }
 }

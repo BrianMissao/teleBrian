@@ -1,6 +1,6 @@
 package aplicacao.operacoesComAssinantes.buscaAssinante;
 
-import dominio.entidades.Assinante;
+import dominio.entidades.assinante.Assinante;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeBuscaDeAssinante;
 
 import java.util.List;
@@ -14,11 +14,6 @@ public class BuscaAssinanteConcreto implements BuscaAssinante {
 
     @Override
     public Assinante buscar(String nomeDoAssinanteABuscar) throws ExcecaoDeBuscaDeAssinante {
-        for (Assinante assinante : assinantes) {
-            if (assinante.getNome().equals(nomeDoAssinanteABuscar)) {
-                return assinante;
-            }
-        }
-        throw new ExcecaoDeBuscaDeAssinante("O assinante " + nomeDoAssinanteABuscar + " não está cadastrado");
+        return assinantes.stream().filter(assinante -> assinante.getNome().equals(nomeDoAssinanteABuscar)).findFirst().orElseThrow(() -> new ExcecaoDeBuscaDeAssinante("O assinante " + nomeDoAssinanteABuscar + " não está cadastrado"));
     }
 }

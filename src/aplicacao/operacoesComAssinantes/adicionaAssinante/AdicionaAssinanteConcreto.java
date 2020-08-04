@@ -1,6 +1,6 @@
 package aplicacao.operacoesComAssinantes.adicionaAssinante;
 
-import dominio.entidades.Assinante;
+import dominio.entidades.assinante.Assinante;
 
 import java.util.List;
 
@@ -12,8 +12,7 @@ public class AdicionaAssinanteConcreto implements AdicionaAssinante {
     }
 
     @Override
-    public boolean adicionar(Assinante assinante) {
+    public void adicionar(Assinante assinante) {
         assinantes.add(assinante);
-        return true;
     }
 }

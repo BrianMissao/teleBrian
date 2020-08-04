@@ -1,7 +1,7 @@
 package aplicacao.operacoesComAssinantes.adicionaAssinante;
 
-import dominio.entidades.Assinante;
+import dominio.entidades.assinante.Assinante;
 
 public interface AdicionaAssinante {
-    public abstract boolean adicionar(Assinante assinante);
+    public abstract void adicionar(Assinante assinante);
 }

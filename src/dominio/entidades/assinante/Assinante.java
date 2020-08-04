@@ -1,10 +1,11 @@
-package dominio.entidades;
+package dominio.entidades.assinante;
 
+import dominio.entidades.Plano;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 
 import java.math.BigDecimal;
 
-public class Assinante {
+public abstract class Assinante {
     private String nome;
     private Plano plano;
 
@@ -20,12 +21,7 @@ public class Assinante {
         }
     }
 
-    @Override
-    public String toString() {
-        return nome + ", contratou o plano " + obterNomeDoPlano() + ", no valor de " + obterValorDoPlano() + "R$";
-    }
-
-    private String obterNomeDoPlano() {
+    protected String obterNomeDoPlano() {
         return plano.getNome();
     }
 

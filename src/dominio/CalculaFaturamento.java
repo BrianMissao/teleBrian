@@ -1,6 +1,6 @@
 package dominio;
 
-import dominio.entidades.Assinante;
+import dominio.entidades.assinante.Assinante;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
