@@ -1,6 +1,7 @@
 package aplicacao.operacoesComAssinantes.removeAssinante;
 
 import dominio.entidades.Assinante;
+import dominio.excecoesDeRegraDeNegocio.ExcecaoDeRemocaoDeAssinante;
 
 import java.util.List;
 
@@ -12,8 +13,9 @@ public class RemoveAssinanteConcreto implements RemoveAssinante {
     }
 
     @Override
-    public boolean remover(String nomeDoAssinanteARemover) {
-        return assinantes.removeIf(assinante -> assinante.getNome().equals(nomeDoAssinanteARemover));
+    public void remover(String nomeDoAssinanteARemover) throws ExcecaoDeRemocaoDeAssinante{
+        if (!assinantes.removeIf(assinante -> assinante.getNome().equals(nomeDoAssinanteARemover))) {
+            throw new ExcecaoDeRemocaoDeAssinante("Não foi possível remover o assinante " + nomeDoAssinanteARemover);
+        }
     }
-
 }

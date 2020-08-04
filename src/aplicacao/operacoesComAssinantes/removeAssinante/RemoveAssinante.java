@@ -1,5 +1,7 @@
 package aplicacao.operacoesComAssinantes.removeAssinante;
 
+import dominio.excecoesDeRegraDeNegocio.ExcecaoDeRemocaoDeAssinante;
+
 public interface RemoveAssinante {
-    public abstract boolean remover(String nomeDoAssinanteARemover);
+    public abstract void remover(String nomeDoAssinanteARemover) throws ExcecaoDeRemocaoDeAssinante;
 }
