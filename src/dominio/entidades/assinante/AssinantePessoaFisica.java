@@ -13,7 +13,7 @@ public class AssinantePessoaFisica extends Assinante{
 
     @Override
     public String toString() {
-        return "*"+getNome()+"\nCPF: "+getCpf()+"\nPlano contratado: "+obterNomeDoPlano()+"\nValor do plano contratado: "+obterValorDoPlano();
+        return "*"+getNome()+"\nCPF: "+getCpf()+"\nPlano contratado: "+obterNomeDoPlano()+"\nValor do plano contratado: "+obterValorDoPlano()+"R$";
     }
 
     public String getCpf() {

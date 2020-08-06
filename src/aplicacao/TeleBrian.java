@@ -8,7 +8,10 @@ import aplicacao.assinantes.busca.Busca;
 import aplicacao.assinantes.busca.BuscaConcreto;
 import aplicacao.assinantes.remove.Remove;
 import aplicacao.assinantes.remove.RemoveConcreto;
-import dominio.CalculaFaturamento;
+import dominio.calculos.CalculoDeFaturamento;
+import dominio.calculos.CalculoDeGastos;
+import dominio.calculos.Calculos;
+import dominio.entidades.Funcionario;
 import dominio.entidades.assinante.Assinante;
 import dominio.entidades.Plano;
 import dominio.entidades.assinante.AssinantePessoaFisica;
@@ -23,6 +26,7 @@ import java.util.Scanner;
 
 public class TeleBrian {
     private static List<Assinante> assinantes = new ArrayList<>();
+    private static List<Funcionario> funcionarios = new ArrayList<>();
     private static Adiciona adiciona = new AdicionaConcreto(assinantes);
     private static ExibeInformacoesDeTodos exibeInformacoesDeTodos = new ExibeInformacoesDeTodosConcreto(assinantes);
     private static Remove remove = new RemoveConcreto(assinantes);
@@ -32,9 +36,8 @@ public class TeleBrian {
     public static void main(String[] args) throws ExcecaoDeArgumentoInvalido {
         cadastrarAssinante();
         cadastrarAssinante();
+        cadastrarFuncionario();
         exibirRelatorio();
-        String assinanteAExibirRelatorio = obterDados("Digite o assinante sobre o qual deseja exibir relatório:");
-        exibirRelatorioSobreUmAssinanteEspecifico(assinanteAExibirRelatorio);
     }
 
     private static void cadastrarAssinante() throws ExcecaoDeArgumentoInvalido {
@@ -49,9 +52,24 @@ public class TeleBrian {
         cadastrarAssinantePessoaJuridica(nomeDoAssinante, nomeDoPlano, valorDoPlano);
     }
 
+    private static void cadastrarFuncionario() {
+        String nomeDoFuncionario = obterDados("Informe do nome do funcionário:");
+        Integer numeroDaMatriculaDoFuncionario = Integer.valueOf(obterDados("Informe o número da matrícula:"));
+        BigDecimal salarioDoFuncionario = new BigDecimal(obterDados("Qual o salário deste funcionário?"));
+        try {
+            funcionarios.add(new Funcionario(nomeDoFuncionario, numeroDaMatriculaDoFuncionario, salarioDoFuncionario));
+            System.out.println("Funcionário cadastrado com sucesso!");
+        } catch (ExcecaoDeArgumentoInvalido excecaoDeArgumentoInvalido) {
+            System.out.println("Erro: " + excecaoDeArgumentoInvalido.getMessage());
+        }
+    }
+
     private static void exibirRelatorio() {
+        Calculos calculaFaturamento = new CalculoDeFaturamento(assinantes);
+        Calculos calculaGastos = new CalculoDeGastos(funcionarios);
         exibeInformacoesDeTodos.exibir();
-        System.out.println("Faturamento da operadora: " + CalculaFaturamento.calcular(assinantes) + "R$");
+        System.out.println("Faturamento da operadora: " + calculaFaturamento.calcular() + "R$");
+        System.out.println("Gastos da operadora: "+calculaGastos.calcular()+"R$");
     }
 
     private static String obterDados(String mensagemAoUsuario) {
@@ -68,14 +86,14 @@ public class TeleBrian {
         }
     }
 
-    private static void cadastrarAssinantePessoaFisica(String nomeDoAssinante, String nomeDoPlano, BigDecimal valorDoPlano) throws ExcecaoDeArgumentoInvalido{
+    private static void cadastrarAssinantePessoaFisica(String nomeDoAssinante, String nomeDoPlano, BigDecimal valorDoPlano) throws ExcecaoDeArgumentoInvalido {
         String cpfDoAssinante = obterDados("Informe o CPF do assinante:");
         Assinante assinanteAAdicionar = new AssinantePessoaFisica(nomeDoAssinante, cpfDoAssinante, new Plano(nomeDoPlano, valorDoPlano));
         adiciona.adicionar(assinanteAAdicionar);
         System.out.println("Assinante adicionado com sucesso!");
     }
 
-    private static void cadastrarAssinantePessoaJuridica(String nomeDoAssinante, String nomeDoPlano, BigDecimal valorDoPlano) throws ExcecaoDeArgumentoInvalido{
+    private static void cadastrarAssinantePessoaJuridica(String nomeDoAssinante, String nomeDoPlano, BigDecimal valorDoPlano) throws ExcecaoDeArgumentoInvalido {
         String cnpjDoAssinante = obterDados("Informe o CNPJ do assinante:");
         Assinante assinanteAAdicionar = new AssinantePessoaJuridica(nomeDoAssinante, cnpjDoAssinante, new Plano(nomeDoPlano, valorDoPlano));
         adiciona.adicionar(assinanteAAdicionar);
