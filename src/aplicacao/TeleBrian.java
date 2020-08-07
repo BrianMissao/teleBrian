@@ -53,7 +53,7 @@ public class TeleBrian {
     }
 
     private static void cadastrarFuncionario() {
-        String nomeDoFuncionario = obterDados("Informe do nome do funcionário:");
+        String nomeDoFuncionario = obterDados("Informe o nome do funcionário:");
         Integer numeroDaMatriculaDoFuncionario = Integer.valueOf(obterDados("Informe o número da matrícula:"));
         BigDecimal salarioDoFuncionario = new BigDecimal(obterDados("Qual o salário deste funcionário?"));
         try {
@@ -65,11 +65,13 @@ public class TeleBrian {
     }
 
     private static void exibirRelatorio() {
-        Calculos calculaFaturamento = new CalculoDeFaturamento(assinantes);
-        Calculos calculaGastos = new CalculoDeGastos(funcionarios);
+        Calculos calculoDeFaturamento = new CalculoDeFaturamento(assinantes);
+        Calculos calculoDeGastos = new CalculoDeGastos(funcionarios);
+        BigDecimal balancoFinanceiro = new ObtemBalancoFinanceiro(calculoDeFaturamento, calculoDeGastos).obter();
         exibeInformacoesDeTodos.exibir();
-        System.out.println("Faturamento da operadora: " + calculaFaturamento.calcular() + "R$");
-        System.out.println("Gastos da operadora: "+calculaGastos.calcular()+"R$");
+        System.out.println("Faturamento da operadora: " + calculoDeFaturamento.calcular() + "R$");
+        System.out.println("Gastos da operadora: "+calculoDeGastos.calcular()+"R$");
+        System.out.println("Balanço financeiro: "+balancoFinanceiro+"R$");
     }
 
     private static String obterDados(String mensagemAoUsuario) {
