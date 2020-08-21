@@ -1,6 +1,6 @@
 package dominio.entidades;
 
-import dominio.Validador;
+import dominio.ValidadorDeCamposObrigatorios;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 
 import java.math.BigDecimal;
@@ -11,8 +11,8 @@ public class Plano {
     private BigDecimal valor;
 
     public Plano(String nome, BigDecimal valor) throws ExcecaoDeArgumentoInvalido {
-        new Validador().validarString(nome);
-        new Validador().validarBigDecimal(valor);
+        new ValidadorDeCamposObrigatorios().validarString(nome);
+        new ValidadorDeCamposObrigatorios().validarBigDecimal(valor);
         this.nome = nome;
         this.valor = valor.setScale(2, RoundingMode.HALF_EVEN);
     }

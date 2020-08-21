@@ -1,6 +1,6 @@
 package dominio.entidades.assinante;
 
-import dominio.Validador;
+import dominio.ValidadorDeCamposObrigatorios;
 import dominio.entidades.Plano;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 
@@ -11,8 +11,8 @@ public abstract class Assinante {
     private Plano plano;
 
     public Assinante(String nome, Plano plano) throws ExcecaoDeArgumentoInvalido {
-        new Validador().validarString(nome);
-        new Validador().validarObjeto(plano);
+        new ValidadorDeCamposObrigatorios().validarString(nome);
+        new ValidadorDeCamposObrigatorios().validarObjeto(plano);
         this.nome = nome;
         this.plano = plano;
     }
@@ -29,7 +29,8 @@ public abstract class Assinante {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void atualizarNome(String nome) throws ExcecaoDeArgumentoInvalido {
+        new ValidadorDeCamposObrigatorios().validarString(nome);
         this.nome = nome;
     }
 
@@ -37,7 +38,8 @@ public abstract class Assinante {
         return plano;
     }
 
-    public void setPlano(Plano plano) {
-        this.plano = plano;
+    public void atualizarPlano(Plano planoAtualizado) throws ExcecaoDeArgumentoInvalido {
+        new ValidadorDeCamposObrigatorios().validarObjeto(planoAtualizado);
+        this.plano = planoAtualizado;
     }
 }

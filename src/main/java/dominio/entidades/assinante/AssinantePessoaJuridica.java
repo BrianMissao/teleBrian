@@ -1,6 +1,6 @@
 package dominio.entidades.assinante;
 
-import dominio.Validador;
+import dominio.ValidadorDeCamposObrigatorios;
 import dominio.entidades.Plano;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 
@@ -12,8 +12,17 @@ public class AssinantePessoaJuridica extends Assinante {
 
     public AssinantePessoaJuridica(String nome, String cnpj, Plano plano) throws ExcecaoDeArgumentoInvalido {
         super(nome, plano);
-        new Validador().validarString(cnpj);
+        validarCamposObrigatorios(cnpj);
         this.cnpj = cnpj;
+    }
+
+    private void validarCamposObrigatorios(String campoAValidar) throws ExcecaoDeArgumentoInvalido {
+        new ValidadorDeCamposObrigatorios().validarString(campoAValidar);
+    }
+
+    public void atualizarCnpj(String cnpjAtualizado) throws ExcecaoDeArgumentoInvalido {
+        validarCamposObrigatorios(cnpjAtualizado);
+        this.cnpj = cnpjAtualizado;
     }
 
     @Override
@@ -21,6 +30,7 @@ public class AssinantePessoaJuridica extends Assinante {
         BigDecimal valorDoDesconto = super.obterValorDoPlano().multiply(new BigDecimal("0.25"));
         return super.obterValorDoPlano().subtract(valorDoDesconto).setScale(2, RoundingMode.HALF_EVEN);
     }
+
     public String getCnpj() {
         return cnpj;
     }

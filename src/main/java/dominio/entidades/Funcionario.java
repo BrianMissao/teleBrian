@@ -1,6 +1,6 @@
 package dominio.entidades;
 
-import dominio.Validador;
+import dominio.ValidadorDeCamposObrigatorios;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 
 import java.math.BigDecimal;
@@ -11,9 +11,9 @@ public class Funcionario {
     private BigDecimal salario;
 
     public Funcionario(String nome, String cargo, BigDecimal salario) throws ExcecaoDeArgumentoInvalido {
-        new Validador().validarString(nome);
-        new Validador().validarString(cargo);
-        new Validador().validarBigDecimal(salario);
+        new ValidadorDeCamposObrigatorios().validarString(nome);
+        new ValidadorDeCamposObrigatorios().validarString(cargo);
+        new ValidadorDeCamposObrigatorios().validarBigDecimal(salario);
         this.nome = nome;
         this.cargo = cargo;
         this.salario = salario;

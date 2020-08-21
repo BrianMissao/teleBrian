@@ -4,7 +4,7 @@ import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 
 import java.math.BigDecimal;
 
-public class Validador {
+public class ValidadorDeCamposObrigatorios {
 
     public void validarString(String stringAServalidada) throws ExcecaoDeArgumentoInvalido {
         if (stringAServalidada == null || stringAServalidada.equals("")) {
