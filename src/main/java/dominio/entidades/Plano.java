@@ -24,4 +24,14 @@ public class Plano {
     public BigDecimal getValor() {
         return valor;
     }
+
+    public void atualizarNome(String nomeAtualizado) throws ExcecaoDeArgumentoInvalido {
+        new ValidadorDeCamposObrigatorios().validarString(nomeAtualizado);
+        this.nome = nomeAtualizado;
+    }
+
+    public void atualizarValor(BigDecimal valorAtualizado) throws ExcecaoDeArgumentoInvalido {
+        new ValidadorDeCamposObrigatorios().validarBigDecimal(valorAtualizado);
+        this.valor = valorAtualizado;
+    }
 }

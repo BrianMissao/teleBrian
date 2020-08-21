@@ -14,6 +14,6 @@ public class ObtemBalancoFinanceiro {
     }
 
     public BigDecimal obter() {
-        return null;
+        return calculoDeFaturamento.calcular().subtract(calculoDeGastos.calcular());
     }
 }
