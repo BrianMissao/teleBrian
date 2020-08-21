@@ -1,7 +1,7 @@
 package aplicacao.assinantes.adicionaAssinante;
 
 import dominio.entidades.assinante.Assinante;
-import dominio.entidades.assinante.AssinantePessoaFisicaBuilder;
+import dominio.builders.AssinantePessoaFisicaBuilder;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;

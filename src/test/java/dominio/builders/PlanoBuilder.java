@@ -1,4 +1,4 @@
-package dominio;
+package dominio.builders;
 
 import dominio.entidades.Plano;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;

@@ -1,5 +1,7 @@
 package aplicacao.assinantes.consultaAssinante;
 
+import dominio.builders.AssinantePessoaFisicaBuilder;
+import dominio.builders.AssinantePessoaJuridicaBuilder;
 import dominio.entidades.assinante.*;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeBuscaDeAssinante;

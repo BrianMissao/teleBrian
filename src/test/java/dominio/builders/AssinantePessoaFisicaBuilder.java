@@ -1,6 +1,7 @@
-package dominio.entidades.assinante;
+package dominio.builders;
 
 import dominio.entidades.Plano;
+import dominio.entidades.assinante.AssinantePessoaFisica;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 
 import java.math.BigDecimal;

@@ -1,6 +1,6 @@
 package dominio.calculos;
 
-import dominio.FuncionarioBuilder;
+import dominio.builders.FuncionarioBuilder;
 import dominio.entidades.Funcionario;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
@@ -9,8 +9,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class CalculoDeGastosTest {
 
@@ -28,4 +26,4 @@ public class CalculoDeGastosTest {
 
         Assertions.assertThat(totalDeGastos).isEqualTo(totalDeGastosEsperado);
     }
-}
+}n

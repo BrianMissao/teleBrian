@@ -15,15 +15,10 @@ import java.math.RoundingMode;
 import static org.junit.Assert.*;
 
 public class ObtemBalancoFinanceiroTest {
-    @Mock
-    private Calculos calculoDeFaturamento;
-    @Mock
-    private Calculos calculoDeGastos;
 
-    @Before
-    public void init() {
-        MockitoAnnotations.initMocks(this);
-    }
+    private Calculos calculoDeFaturamento = Mockito.mock(Calculos.class);
+
+    private Calculos calculoDeGastos = Mockito.mock(Calculos.class);
 
     @Test
     public void deveObterOBalancoFinanceiro() {

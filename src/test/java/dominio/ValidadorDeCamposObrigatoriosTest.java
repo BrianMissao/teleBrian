@@ -1,6 +1,7 @@
 package dominio;
 
 import dominio.entidades.Plano;
+import dominio.builders.PlanoBuilder;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;

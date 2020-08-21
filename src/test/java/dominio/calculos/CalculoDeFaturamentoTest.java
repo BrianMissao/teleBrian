@@ -1,11 +1,10 @@
 package dominio.calculos;
 
-import dominio.PlanoBuilder;
+import dominio.builders.PlanoBuilder;
 import dominio.entidades.Plano;
 import dominio.entidades.assinante.Assinante;
-import dominio.entidades.assinante.AssinantePessoaFisica;
-import dominio.entidades.assinante.AssinantePessoaFisicaBuilder;
-import dominio.entidades.assinante.AssinantePessoaJuridicaBuilder;
+import dominio.builders.AssinantePessoaFisicaBuilder;
+import dominio.builders.AssinantePessoaJuridicaBuilder;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
@@ -13,8 +12,6 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class CalculoDeFaturamentoTest {
 

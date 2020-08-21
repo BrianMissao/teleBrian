@@ -1,8 +1,7 @@
 package aplicacao.assinantes.removeAssinante;
 
 import dominio.entidades.assinante.Assinante;
-import dominio.entidades.assinante.AssinantePessoaFisicaBuilder;
-import dominio.entidades.assinante.AssinantePessoaJuridicaBuilder;
+import dominio.builders.AssinantePessoaFisicaBuilder;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeRemocaoDeAssinante;
 import org.assertj.core.api.Assertions;
