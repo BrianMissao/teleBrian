@@ -15,12 +15,10 @@ public class AdicionaAssinanteConcretoTest {
         List<Assinante> assinantes = new ArrayList<>();
         Assinante assinanteDoTipoPessoaFisica = new AssinantePessoaFisicaBuilder().criar();
         AdicionaAssinante adicionaAssinante = new AdicionaAssinanteConcreto(assinantes);
-        String mensagemEsperada = "Assinante adicionado com sucesso!";
 
-        String mensagem = adicionaAssinante.adicionar(assinanteDoTipoPessoaFisica);
+        adicionaAssinante.adicionar(assinanteDoTipoPessoaFisica);
 
         Assertions.assertThat(assinantes).contains(assinanteDoTipoPessoaFisica);
-        Assertions.assertThat(mensagem).isEqualTo(mensagemEsperada);
     }
 
 }
