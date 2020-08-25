@@ -14,7 +14,7 @@ public class AssinantePessoaFisica extends Assinante {
     }
 
     private void validarCamposObrigatorios(String campoAValidar) throws ExcecaoDeArgumentoInvalido {
-        new ValidadorDeCamposObrigatorios().validarString(campoAValidar);
+        new ValidadorDeCamposObrigatorios().validarString(campoAValidar).validar();
     }
 
     @Override

@@ -23,7 +23,7 @@ public class ValidadorDeCamposObrigatoriosTest {
         String stringASerValidada = "";
         String erroEsperado = "String inválida";
 
-        Throwable excecaoLancada = Assertions.catchThrowable(() -> validadorDeCamposObrigatorios.validarString(stringASerValidada));
+        Throwable excecaoLancada = Assertions.catchThrowable(() -> validadorDeCamposObrigatorios.validarString(stringASerValidada).validar());
 
         Assertions.assertThat(excecaoLancada).hasMessageContaining(erroEsperado);
     }
@@ -33,7 +33,7 @@ public class ValidadorDeCamposObrigatoriosTest {
         String erroEsperado = "String inválida";
         String stringASerValidada = null;
 
-        Throwable excecaoLancada = Assertions.catchThrowable(() -> validadorDeCamposObrigatorios.validarString(stringASerValidada));
+        Throwable excecaoLancada = Assertions.catchThrowable(() -> validadorDeCamposObrigatorios.validarString(stringASerValidada).validar());
 
         Assertions.assertThat(excecaoLancada).hasMessageContaining(erroEsperado);
     }
@@ -52,7 +52,7 @@ public class ValidadorDeCamposObrigatoriosTest {
         BigDecimal bigDecimalASerValidado = BigDecimal.ZERO;
         String mensagemEsperada = "BigDecimal inválido";
 
-        Throwable excecaoLancada = Assertions.catchThrowable(() -> validadorDeCamposObrigatorios.validarBigDecimal(bigDecimalASerValidado));
+        Throwable excecaoLancada = Assertions.catchThrowable(() -> validadorDeCamposObrigatorios.validarBigDecimal(bigDecimalASerValidado).validar());
 
         Assertions.assertThat(excecaoLancada).hasMessageContaining(mensagemEsperada);
     }
@@ -62,7 +62,7 @@ public class ValidadorDeCamposObrigatoriosTest {
         String mensagemEsperada = "BigDecimal inválido";
         BigDecimal bigDecimalASerValidado = null;
 
-        Throwable excecaoLancada = Assertions.catchThrowable(() -> validadorDeCamposObrigatorios.validarBigDecimal(bigDecimalASerValidado));
+        Throwable excecaoLancada = Assertions.catchThrowable(() -> validadorDeCamposObrigatorios.validarBigDecimal(bigDecimalASerValidado).validar());
 
         Assertions.assertThat(excecaoLancada).hasMessageContaining(mensagemEsperada);
     }
@@ -71,7 +71,7 @@ public class ValidadorDeCamposObrigatoriosTest {
     public void naoDeveLancarExcecaoAoReceberUmBigDecimalValido() {
         BigDecimal bigDecimalValido = new BigDecimal("0.1");
 
-        Throwable excecaoLancada = Assertions.catchThrowable(() -> validadorDeCamposObrigatorios.validarBigDecimal(bigDecimalValido));
+        Throwable excecaoLancada = Assertions.catchThrowable(() -> validadorDeCamposObrigatorios.validarBigDecimal(bigDecimalValido).validar());
 
         Assertions.assertThat(excecaoLancada).isNull();
     }
@@ -81,7 +81,7 @@ public class ValidadorDeCamposObrigatoriosTest {
         Object objetoAValidar = null;
         String mensagemEsperada = "Objeto inválido";
 
-        Throwable excecaoLancada = Assertions.catchThrowable(() -> validadorDeCamposObrigatorios.validarObjeto(objetoAValidar));
+        Throwable excecaoLancada = Assertions.catchThrowable(() -> validadorDeCamposObrigatorios.validarObjeto(objetoAValidar).validar());
 
         Assertions.assertThat(excecaoLancada).hasMessageContaining(mensagemEsperada);
     }

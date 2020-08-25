@@ -11,12 +11,17 @@ public class Funcionario {
     private BigDecimal salario;
 
     public Funcionario(String nome, String cargo, BigDecimal salario) throws ExcecaoDeArgumentoInvalido {
-        new ValidadorDeCamposObrigatorios().validarString(nome);
-        new ValidadorDeCamposObrigatorios().validarString(cargo);
-        new ValidadorDeCamposObrigatorios().validarBigDecimal(salario);
+        validarCamposObrigatorios(nome, cargo, salario);
         this.nome = nome;
         this.cargo = cargo;
         this.salario = salario;
+    }
+
+    private void validarCamposObrigatorios(String nome, String cargo, BigDecimal salario) throws ExcecaoDeArgumentoInvalido {
+        ValidadorDeCamposObrigatorios validadorDeCamposObrigatorios = new ValidadorDeCamposObrigatorios();
+        validadorDeCamposObrigatorios.validarString(nome);
+        validadorDeCamposObrigatorios.validarString(cargo);
+        validadorDeCamposObrigatorios.validarBigDecimal(salario);
     }
 
     @Override

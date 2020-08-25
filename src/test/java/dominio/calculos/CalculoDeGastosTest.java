@@ -26,4 +26,4 @@ public class CalculoDeGastosTest {
 
         Assertions.assertThat(totalDeGastos).isEqualTo(totalDeGastosEsperado);
     }
-}n
+}

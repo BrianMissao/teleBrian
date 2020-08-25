@@ -3,24 +3,38 @@ package dominio;
 import dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ValidadorDeCamposObrigatorios {
+    private List<String> erros = new ArrayList<>();
 
-    public void validarString(String stringAServalidada) throws ExcecaoDeArgumentoInvalido {
+    public ValidadorDeCamposObrigatorios validarString(String stringAServalidada) throws ExcecaoDeArgumentoInvalido {
         if (stringAServalidada == null || stringAServalidada.equals("")) {
-            throw new ExcecaoDeArgumentoInvalido("String inválida.");
+            erros.add("String inválida.");
         }
+        return this;
     }
 
-    public void validarBigDecimal(BigDecimal bigDecimalASerValidado) throws ExcecaoDeArgumentoInvalido {
+    public ValidadorDeCamposObrigatorios validarBigDecimal(BigDecimal bigDecimalASerValidado) throws ExcecaoDeArgumentoInvalido {
         if (bigDecimalASerValidado == null || bigDecimalASerValidado.compareTo(BigDecimal.ZERO) <= 0) {
-            throw new ExcecaoDeArgumentoInvalido("BigDecimal inválido");
+            erros.add("BigDecimal inválido");
         }
+        return this;
     }
 
-    public void validarObjeto(Object objetoAValidar) throws ExcecaoDeArgumentoInvalido {
+    public ValidadorDeCamposObrigatorios validarObjeto(Object objetoAValidar) throws ExcecaoDeArgumentoInvalido {
         if (objetoAValidar == null) {
-            throw new ExcecaoDeArgumentoInvalido("Objeto inválido");
+            erros.add("Objeto inválido");
+        }
+        return this;
+    }
+
+    public void validar() throws ExcecaoDeArgumentoInvalido {
+        if (!erros.isEmpty()) {
+            StringBuilder errosConcatenados = new StringBuilder();
+            erros.forEach(erro -> errosConcatenados.append(erro + ", "));
+            throw new ExcecaoDeArgumentoInvalido(errosConcatenados.toString());
         }
     }
 }

@@ -16,12 +16,14 @@ import static org.junit.Assert.*;
 
 public class ObtemBalancoFinanceiroTest {
 
-    private Calculos calculoDeFaturamento = Mockito.mock(Calculos.class);
+    private Calculos calculoDeFaturamento;
 
-    private Calculos calculoDeGastos = Mockito.mock(Calculos.class);
+    private Calculos calculoDeGastos;
 
     @Test
     public void deveObterOBalancoFinanceiro() {
+        calculoDeFaturamento = Mockito.mock(Calculos.class);
+        calculoDeGastos = Mockito.mock(Calculos.class);
         BigDecimal totalDeFaturamento = new BigDecimal("1000.00");
         BigDecimal totalDeGastos = new BigDecimal("800.00");
         BigDecimal balancoEsperado = new BigDecimal("200.00");

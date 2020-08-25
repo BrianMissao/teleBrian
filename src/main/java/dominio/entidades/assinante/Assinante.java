@@ -11,10 +11,13 @@ public abstract class Assinante {
     private Plano plano;
 
     public Assinante(String nome, Plano plano) throws ExcecaoDeArgumentoInvalido {
-        new ValidadorDeCamposObrigatorios().validarString(nome);
-        new ValidadorDeCamposObrigatorios().validarObjeto(plano);
+        validarCamposObrigatorios(nome, plano);
         this.nome = nome;
         this.plano = plano;
+    }
+
+    private void validarCamposObrigatorios(String nome, Plano plano) throws ExcecaoDeArgumentoInvalido {
+        new ValidadorDeCamposObrigatorios().validarObjeto(plano).validarString(nome).validar();
     }
 
     public String obterNomeDoPlano() {
@@ -30,7 +33,7 @@ public abstract class Assinante {
     }
 
     public void atualizarNome(String nome) throws ExcecaoDeArgumentoInvalido {
-        new ValidadorDeCamposObrigatorios().validarString(nome);
+        new ValidadorDeCamposObrigatorios().validarString(nome).validar();
         this.nome = nome;
     }
 
@@ -39,7 +42,7 @@ public abstract class Assinante {
     }
 
     public void atualizarPlano(Plano planoAtualizado) throws ExcecaoDeArgumentoInvalido {
-        new ValidadorDeCamposObrigatorios().validarObjeto(planoAtualizado);
+        new ValidadorDeCamposObrigatorios().validarObjeto(planoAtualizado).validar();
         this.plano = planoAtualizado;
     }
 }

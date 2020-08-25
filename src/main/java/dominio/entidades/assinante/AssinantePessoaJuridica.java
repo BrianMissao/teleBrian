@@ -17,7 +17,7 @@ public class AssinantePessoaJuridica extends Assinante {
     }
 
     private void validarCamposObrigatorios(String campoAValidar) throws ExcecaoDeArgumentoInvalido {
-        new ValidadorDeCamposObrigatorios().validarString(campoAValidar);
+        new ValidadorDeCamposObrigatorios().validarString(campoAValidar).validar();
     }
 
     public void atualizarCnpj(String cnpjAtualizado) throws ExcecaoDeArgumentoInvalido {

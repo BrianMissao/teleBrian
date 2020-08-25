@@ -11,10 +11,18 @@ public class Plano {
     private BigDecimal valor;
 
     public Plano(String nome, BigDecimal valor) throws ExcecaoDeArgumentoInvalido {
-        new ValidadorDeCamposObrigatorios().validarString(nome);
-        new ValidadorDeCamposObrigatorios().validarBigDecimal(valor);
+        validarNome(nome);
+        validarValor(valor);
         this.nome = nome;
         this.valor = valor.setScale(2, RoundingMode.HALF_EVEN);
+    }
+
+    private void validarValor(BigDecimal valor) throws ExcecaoDeArgumentoInvalido {
+        new ValidadorDeCamposObrigatorios().validarBigDecimal(valor).validar();
+    }
+
+    private void validarNome(String nome) throws ExcecaoDeArgumentoInvalido {
+        new ValidadorDeCamposObrigatorios().validarString(nome).validar();
     }
 
     public String getNome() {
@@ -26,12 +34,12 @@ public class Plano {
     }
 
     public void atualizarNome(String nomeAtualizado) throws ExcecaoDeArgumentoInvalido {
-        new ValidadorDeCamposObrigatorios().validarString(nomeAtualizado);
+        validarNome(nomeAtualizado);
         this.nome = nomeAtualizado;
     }
 
     public void atualizarValor(BigDecimal valorAtualizado) throws ExcecaoDeArgumentoInvalido {
-        new ValidadorDeCamposObrigatorios().validarBigDecimal(valorAtualizado);
+        validarValor(valorAtualizado);
         this.valor = valorAtualizado;
     }
 }
