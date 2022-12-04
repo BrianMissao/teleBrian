@@ -1,0 +1,15 @@
+dominio\builders\FuncionarioBuilder.class
+aplicacao\assinantes\consultaAssinante\ConsultaAssinanteConcretoTest.class
+dominio\builders\AssinantePessoaFisicaBuilder.class
+dominio\builders\AssinantePessoaJuridicaBuilder.class
+dominio\entidades\PlanoTest.class
+dominio\entidades\assinante\AssinantePessoaFisicaTest.class
+dominio\entidades\assinante\AssinantePessoaJuridicaTest.class
+dominio\entidades\FuncionarioTest.class
+aplicacao\assinantes\removeAssinante\RemoveAssinanteConcretoTest.class
+dominio\calculos\CalculoDeGastosTest.class
+aplicacao\assinantes\adicionaAssinante\AdicionaAssinanteConcretoTest.class
+aplicacao\ObtemBalancoFinanceiroTest.class
+dominio\builders\PlanoBuilder.class
+dominio\calculos\CalculoDeFaturamentoTest.class
+dominio\ValidadorDeCamposObrigatoriosTest.class
