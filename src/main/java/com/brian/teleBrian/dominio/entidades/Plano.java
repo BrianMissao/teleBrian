@@ -6,9 +6,20 @@ import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoIn
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class Plano {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
+public class Plano extends EntidadeBase {
+
+    @Column
     private String nome;
+
+    @Column
     private BigDecimal valor;
+
+    public Plano() {
+    }
 
     public Plano(String nome, BigDecimal valor) throws ExcecaoDeArgumentoInvalido {
         validarNome(nome);

@@ -6,10 +6,23 @@ import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoIn
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class Funcionario {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
+public class Funcionario extends EntidadeBase {
+
+    @Column
     private String nome;
+
+    @Column
     private String cargo;
+
+    @Column
     private BigDecimal salario;
+
+    public Funcionario() {
+    }
 
     public Funcionario(String nome, String cargo, BigDecimal salario) throws ExcecaoDeArgumentoInvalido {
         validarCamposObrigatorios(nome, cargo, salario);
@@ -18,7 +31,8 @@ public class Funcionario {
         this.salario = salario.setScale(2, RoundingMode.HALF_EVEN);
     }
 
-    private void validarCamposObrigatorios(String nome, String cargo, BigDecimal salario) throws ExcecaoDeArgumentoInvalido {
+    private void validarCamposObrigatorios(String nome, String cargo, BigDecimal salario)
+            throws ExcecaoDeArgumentoInvalido {
         ValidadorDeCamposObrigatorios validadorDeCamposObrigatorios = new ValidadorDeCamposObrigatorios();
         validadorDeCamposObrigatorios.validarString(nome).validarString(cargo).validarBigDecimal(salario).validar();
     }

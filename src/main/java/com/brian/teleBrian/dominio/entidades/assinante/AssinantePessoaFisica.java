@@ -1,11 +1,23 @@
 package com.brian.teleBrian.dominio.entidades.assinante;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
 import com.brian.teleBrian.dominio.ValidadorDeCamposObrigatorios;
 import com.brian.teleBrian.dominio.entidades.Plano;
 import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 
+@Entity
+@DiscriminatorValue("ASSINANTE_PESSOA_FISICA")
 public class AssinantePessoaFisica extends Assinante {
+
+    @Column
     private String cpf;
+
+    public AssinantePessoaFisica() {
+        super();
+    }
 
     public AssinantePessoaFisica(String nome, String cpf, Plano plano) throws ExcecaoDeArgumentoInvalido {
         super(nome, plano);

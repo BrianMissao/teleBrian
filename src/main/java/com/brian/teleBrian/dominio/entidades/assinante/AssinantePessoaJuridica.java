@@ -7,8 +7,19 @@ import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoIn
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("ASSINANTE_PESSOA_JURIDICA")
 public class AssinantePessoaJuridica extends Assinante {
+
+    @Column
     private String cnpj;
+
+    public AssinantePessoaJuridica() {
+    }
 
     public AssinantePessoaJuridica(String nome, String cnpj, Plano plano) throws ExcecaoDeArgumentoInvalido {
         super(nome, plano);

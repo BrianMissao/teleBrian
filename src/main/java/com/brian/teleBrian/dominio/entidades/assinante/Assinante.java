@@ -1,14 +1,33 @@
 package com.brian.teleBrian.dominio.entidades.assinante;
 
+import java.math.BigDecimal;
+
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
+
 import com.brian.teleBrian.dominio.ValidadorDeCamposObrigatorios;
+import com.brian.teleBrian.dominio.entidades.EntidadeBase;
 import com.brian.teleBrian.dominio.entidades.Plano;
 import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 
-import java.math.BigDecimal;
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING, name = "tipo", length = 32)
+public abstract class Assinante extends EntidadeBase {
 
-public abstract class Assinante {
+    @Column
     private String nome;
+
+    @ManyToOne
     private Plano plano;
+
+    public Assinante() {
+    }
 
     public Assinante(String nome, Plano plano) throws ExcecaoDeArgumentoInvalido {
         validarCamposObrigatorios(nome, plano);
