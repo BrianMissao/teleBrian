@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Service
 @RestController
-@RequestMapping(path = "/planos", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path = "/planos", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class PlanoAPI {
 
     @Autowired
     private AdicionaPlano adicionaPlano;
 
-    @PostMapping
+    @PostMapping()
     public Plano adicionar(@RequestBody PlanoDTO planoDTO) throws ExcecaoDeArgumentoInvalido {
         return adicionaPlano.adicionar(planoDTO);
     }
