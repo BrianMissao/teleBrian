@@ -1,7 +1,10 @@
 package com.brian.teleBrian.dominio.calculos;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
 
+import com.brian.teleBrian.dominio.entidades.assinante.Assinante;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +22,6 @@ public class CalculoDeFaturamento implements Calculos {
 
     @Override
     public BigDecimal calcular() {
-        return assinanteCrudRepository.somarValoresDosPlanosDosAssinantes();
+        return assinanteCrudRepository.findAll().stream().map((assinante -> assinante.obterValorDoPlano())).reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 }

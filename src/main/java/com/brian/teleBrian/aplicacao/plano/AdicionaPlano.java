@@ -15,9 +15,9 @@ public class AdicionaPlano {
         this.planoCrudRepository = planoCrudRepository;
     }
 
-    public void adicionar(PlanoDTO planoDTO) throws ExcecaoDeArgumentoInvalido {
+    public Plano adicionar(PlanoDTO planoDTO) throws ExcecaoDeArgumentoInvalido {
         Plano plano = new Plano(planoDTO.getNome(), planoDTO.getValor());
-        planoCrudRepository.save(plano);
+        return planoCrudRepository.save(plano);
     }
 
 }

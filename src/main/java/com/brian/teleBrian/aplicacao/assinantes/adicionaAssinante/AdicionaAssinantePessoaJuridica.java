@@ -26,14 +26,13 @@ public class AdicionaAssinantePessoaJuridica implements AdicionaAssinante {
     }
 
     @Override
-    public String adicionar(AssinanteDTO assinanteDTO) throws ExcecaoDeArgumentoInvalido, ExcecaoDePlanoInesistente {
+    public AssinantePessoaJuridica adicionar(AssinanteDTO assinanteDTO) throws ExcecaoDeArgumentoInvalido, ExcecaoDePlanoInesistente {
         AssinantePessoaJuridicaDTO assinantePessoaJuridicaDTO = (AssinantePessoaJuridicaDTO) assinanteDTO;
         Plano plano = planoCrudRepository.findById(assinantePessoaJuridicaDTO.getPlanoId())
                 .orElseThrow(() -> new ExcecaoDePlanoInesistente(
                         "Não foi possível adicionar o assinante porque o plano informado não existe."));
         AssinantePessoaJuridica assinantePessoaJuridica = new AssinantePessoaJuridica(
                 assinantePessoaJuridicaDTO.getNome(), assinantePessoaJuridicaDTO.getCnpj(), plano);
-        assinanteCrudRepository.save(assinantePessoaJuridica);
-        return null;
+        return assinanteCrudRepository.save(assinantePessoaJuridica);
     }
 }
