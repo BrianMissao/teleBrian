@@ -1,7 +1,10 @@
 com\brian\teleBrian\aplicacao\assinantes\removeAssinante\RemoveAssinanteImplTest.class
 com\brian\teleBrian\dominio\builders\AssinantePessoaJuridicaBuilder.class
 com\brian\teleBrian\aplicacao\assinantes\adicionaAssinante\AdicionaAssinantePessoaJuridicaTest.class
+<<<<<<< Updated upstream
 com\brian\teleBrian\aplicacao\funcionario\AdicionaFuncionarioTest.class
+=======
+>>>>>>> Stashed changes
 com\brian\teleBrian\dominio\calculos\CalculoDeFaturamentoTest.class
 com\brian\teleBrian\dominio\calculos\CalculoDeGastosTest.class
 com\brian\teleBrian\dominio\entidades\assinante\AssinantePessoaJuridicaTest.class

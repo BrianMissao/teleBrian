@@ -8,11 +8,17 @@ com\brian\teleBrian\aplicacao\BaseDTO.class
 com\brian\teleBrian\dominio\entidades\EntidadeBase.class
 com\brian\teleBrian\aplicacao\assinantes\consultaAssinante\ConsultaAssinante.class
 com\brian\teleBrian\infra\FuncionarioDataRepository.class
+<<<<<<< Updated upstream
 com\brian\teleBrian\api\PlanoAPI.class
 com\brian\teleBrian\dominio\entidades\Funcionario.class
 com\brian\teleBrian\dominio\entidades\assinante\AssinanteCrudRepository.class
 com\brian\teleBrian\aplicacao\assinantes\AssinanteDTO.class
 com\brian\teleBrian\aplicacao\funcionario\ConsultaFuncionarios.class
+=======
+com\brian\teleBrian\dominio\entidades\Funcionario.class
+com\brian\teleBrian\dominio\entidades\assinante\AssinanteCrudRepository.class
+com\brian\teleBrian\aplicacao\assinantes\AssinanteDTO.class
+>>>>>>> Stashed changes
 com\brian\teleBrian\dominio\calculos\Calculos.class
 com\brian\teleBrian\dominio\entidades\assinante\AssinantePessoaJuridica.class
 com\brian\teleBrian\aplicacao\assinantes\AssinantePessoaFisicaDTO.class
