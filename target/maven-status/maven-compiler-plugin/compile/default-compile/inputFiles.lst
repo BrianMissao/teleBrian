@@ -6,10 +6,7 @@ C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\dominio\entidades\Entida
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\dominio\entidades\assinante\AssinantePessoaFisica.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\dominio\entidades\PlanoCrudRepository.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\dominio\excecoesDeRegraDeNegocio\ExcecaoDeBuscaDeAssinante.java
-<<<<<<< Updated upstream
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\aplicacao\assinantes\AdicionaAssinanteBase.java
-=======
->>>>>>> Stashed changes
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\aplicacao\assinantes\AssinanteDTO.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\aplicacao\assinantes\consultaAssinante\ConsultaAssinante.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\aplicacao\assinantes\consultaAssinante\ConsultaAssinanteConcreto.java
@@ -25,26 +22,19 @@ C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\Application.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\aplicacao\BaseDTO.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\dominio\entidades\assinante\AssinantePessoaJuridica.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\dominio\entidades\Plano.java
-<<<<<<< Updated upstream
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\api\PlanoAPI.java
-=======
->>>>>>> Stashed changes
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\infra\FuncionarioDataRepository.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\aplicacao\assinantes\removeAssinante\RemoveAssinante.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\dominio\excecoesDeRegraDeNegocio\ExcecaoDeRemocaoDeAssinante.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\aplicacao\assinantes\adicionaAssinante\AdicionaAssinantePessoaFisica.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\dominio\ValidadorDeCamposObrigatorios.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\ServletInitializer.java
-<<<<<<< Updated upstream
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\aplicacao\funcionario\FuncionarioDTO.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\infra\AssinanteDataRepository.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\aplicacao\assinantes\adicionaAssinante\AdicionaAssinante.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\aplicacao\funcionario\ConsultaFuncionarios.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\aplicacao\funcionario\AdicionaFuncionario.java
-=======
-C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\infra\AssinanteDataRepository.java
-C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\aplicacao\assinantes\adicionaAssinante\AdicionaAssinante.java
->>>>>>> Stashed changes
+C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\api\AssinanteAPI.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\dominio\excecoesDeRegraDeNegocio\ExcecaoDePlanoInesistente.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\dominio\entidades\Funcionario.java
 C:\projetos\teleBrian\src\main\java\com\brian\teleBrian\dominio\calculos\Calculos.java

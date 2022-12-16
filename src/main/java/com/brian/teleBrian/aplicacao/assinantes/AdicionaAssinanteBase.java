@@ -22,9 +22,13 @@ public class AdicionaAssinanteBase {
     }
 
     public Assinante adicionar(AssinanteDTO assinanteDTO) throws ExcecaoDePlanoInesistente, ExcecaoDeArgumentoInvalido {
+        Assinante assinante = null;
         if (assinanteDTO instanceof AssinantePessoaFisicaDTO) {
-            return adicionaAssinantePessoaFisica.adicionar(assinanteDTO);
+            assinante = adicionaAssinantePessoaFisica.adicionar(assinanteDTO);
         }
-        return adicionaAssinantePessoaJuridica.adicionar(assinanteDTO);
+        else if (assinanteDTO instanceof AssinantePessoaJuridicaDTO) {
+            assinante = adicionaAssinantePessoaJuridica.adicionar(assinanteDTO);
+        }
+        return assinante;
     }
 }

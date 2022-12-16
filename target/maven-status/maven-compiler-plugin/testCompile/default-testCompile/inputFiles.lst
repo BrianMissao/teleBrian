@@ -2,10 +2,7 @@ C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\aplicacao\ObtemBalancoFi
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\dominio\builders\PlanoBuilder.java
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\aplicacao\assinantes\adicionaAssinante\AdicionaAssinantePessoaFisicaTest.java
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\dominio\builders\AssinantePessoaFisicaBuilder.java
-<<<<<<< Updated upstream
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\aplicacao\funcionario\ConsultaFuncionariosTest.java
-=======
->>>>>>> Stashed changes
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\dominio\entidades\assinante\AssinantePessoaJuridicaTest.java
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\dominio\ValidadorDeCamposObrigatoriosTest.java
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\aplicacao\plano\AdicionaPlanoTest.java
@@ -15,16 +12,10 @@ C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\aplicacao\TesteBase.java
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\dominio\entidades\FuncionarioTest.java
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\aplicacao\assinantes\removeAssinante\RemoveAssinanteImplTest.java
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\dominio\builders\FuncionarioBuilder.java
-<<<<<<< Updated upstream
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\aplicacao\funcionario\AdicionaFuncionarioTest.java
-=======
->>>>>>> Stashed changes
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\dominio\entidades\PlanoTest.java
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\aplicacao\assinantes\consultaAssinante\ConsultaAssinanteConcretoTest.java
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\aplicacao\assinantes\adicionaAssinante\AdicionaAssinantePessoaJuridicaTest.java
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\dominio\entidades\assinante\AssinantePessoaFisicaTest.java
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\dominio\calculos\CalculoDeFaturamentoTest.java
-<<<<<<< Updated upstream
 C:\projetos\teleBrian\src\test\java\com\brian\teleBrian\aplicacao\assinantes\AdicionaAssinanteBaseTest.java
-=======
->>>>>>> Stashed changes

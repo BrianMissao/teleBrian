@@ -6,9 +6,7 @@ public class AssinantePessoaJuridicaDTO extends AssinanteDTO {
 
     private String cnpj;
 
-    public AssinantePessoaJuridicaDTO(Integer id, String nome, PlanoDTO planoDTO, String cnpj) {
-        super(id, nome, planoDTO);
-        this.cnpj = cnpj;
+    public AssinantePessoaJuridicaDTO() {
     }
 
     public AssinantePessoaJuridicaDTO(String nome, PlanoDTO planoDTO, String cnpj) {
@@ -16,11 +14,11 @@ public class AssinantePessoaJuridicaDTO extends AssinanteDTO {
         this.cnpj = cnpj;
     }
 
-    public AssinantePessoaJuridicaDTO(Integer id) {
-        super(id);
-    }
-
     public String getCnpj() {
         return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
 }

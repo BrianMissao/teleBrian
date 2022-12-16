@@ -40,8 +40,9 @@ public class AdicionaAssinantePessoaFisicaTest extends TesteBase {
                 PlanoDTO planoDTO = new PlanoDTO(plano.getId());
                 String nomeEsperado = "Cileide";
                 String cpfEsperado = "098.3098.179.50";
-                AssinantePessoaFisicaDTO assinantePessoaFisicaDTO = new AssinantePessoaFisicaDTO(nomeEsperado,
-                                planoDTO, cpfEsperado);
+//                AssinantePessoaFisicaDTO assinantePessoaFisicaDTO = new AssinantePessoaFisicaDTO(nomeEsperado,
+//                                planoDTO, cpfEsperado);
+            AssinantePessoaFisicaDTO assinantePessoaFisicaDTO = new AssinantePessoaFisicaDTO();
 
                 adicionaAssinante.adicionar(assinantePessoaFisicaDTO);
 
@@ -57,8 +58,9 @@ public class AdicionaAssinantePessoaFisicaTest extends TesteBase {
             throws ExcecaoDeArgumentoInvalido {
         Integer idInexistente = 1;
         PlanoDTO planoDTO = new PlanoDTO(idInexistente);
-                AssinanteDTO assinantePessoaFisicaDTO = new AssinantePessoaFisicaDTO("Super Brian",
-                planoDTO, "043.856.222-87");
+//                AssinanteDTO assinantePessoaFisicaDTO = new AssinantePessoaFisicaDTO("Super Brian",
+//                planoDTO, "043.856.222-87");
+        AssinantePessoaFisicaDTO assinantePessoaFisicaDTO = new AssinantePessoaFisicaDTO();
 
         Throwable throwable = catchThrowable(() -> adicionaAssinante.adicionar(assinantePessoaFisicaDTO));
 

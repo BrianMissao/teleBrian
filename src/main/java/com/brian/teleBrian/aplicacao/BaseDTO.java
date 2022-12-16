@@ -2,7 +2,7 @@ package com.brian.teleBrian.aplicacao;
 
 public class BaseDTO {
 
-    private Integer id;
+    protected Integer id;
 
     public BaseDTO() {
     }

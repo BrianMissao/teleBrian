@@ -3,10 +3,15 @@ package com.brian.teleBrian.aplicacao.assinantes;
 import com.brian.teleBrian.aplicacao.BaseDTO;
 import com.brian.teleBrian.aplicacao.plano.PlanoDTO;
 
-public abstract class AssinanteDTO extends BaseDTO {
+public class AssinanteDTO extends BaseDTO {
 
-    private String nome;
-    private PlanoDTO planoDTO;
+    protected String nome;
+
+    protected PlanoDTO planoDTO;
+
+    public AssinanteDTO() {
+        super();
+    }
 
     public AssinanteDTO(String nome, PlanoDTO planoDTO) {
         this.nome = nome;
@@ -31,4 +36,11 @@ public abstract class AssinanteDTO extends BaseDTO {
         return planoDTO.getId();
     }
 
+    public PlanoDTO getPlanoDTO() {
+        return planoDTO;
+    }
+
+    public void setPlanoDTO(PlanoDTO planoDTO) {
+        this.planoDTO = planoDTO;
+    }
 }

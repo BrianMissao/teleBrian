@@ -1,5 +1,6 @@
 package com.brian.teleBrian.api;
 
+import com.brian.teleBrian.aplicacao.assinantes.AdicionaAssinanteBase;
 import com.brian.teleBrian.aplicacao.plano.AdicionaPlano;
 import com.brian.teleBrian.aplicacao.plano.PlanoDTO;
 import com.brian.teleBrian.dominio.entidades.Plano;
@@ -14,14 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Service
 @RestController
-@RequestMapping(path = "/planos", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(path = "/planos", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 public class PlanoAPI {
 
     @Autowired
     private AdicionaPlano adicionaPlano;
+    private AdicionaAssinanteBase adicionaAssinanteBase;
+
+    public PlanoAPI(AdicionaAssinanteBase adicionaAssinanteBase) {
+        this.adicionaAssinanteBase = adicionaAssinanteBase;
+    }
 
     @PostMapping()
     public Plano adicionar(@RequestBody PlanoDTO planoDTO) throws ExcecaoDeArgumentoInvalido {
         return adicionaPlano.adicionar(planoDTO);
     }
+
+
 }

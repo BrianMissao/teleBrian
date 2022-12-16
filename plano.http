@@ -1,4 +1,5 @@
 POST localhost:8080/planos
 Content-Type: application/json
 
-{"nome": "Brian Missao", "planoDTO": {"id": 1}, "cpf": "029.859.111-17"}
+
+{"nome": "Paga mais caro", "valor":  "200.00"}
