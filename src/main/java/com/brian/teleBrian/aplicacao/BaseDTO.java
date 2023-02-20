@@ -1,8 +1,8 @@
 package com.brian.teleBrian.aplicacao;
 
-public class BaseDTO {
+public abstract class BaseDTO {
 
-    protected Integer id;
+    private Integer id;
 
     public BaseDTO() {
     }

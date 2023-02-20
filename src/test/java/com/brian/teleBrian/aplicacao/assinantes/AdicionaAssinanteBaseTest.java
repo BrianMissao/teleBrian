@@ -34,8 +34,7 @@ public class AdicionaAssinanteBaseTest extends TesteBase {
         PlanoDTO planoDTO = new PlanoDTO(plano.getId());
         String nomeEsperado = "Cileide";
         String cpfEsperado = "098.3098.179.50";
-//        AssinantePessoaFisicaDTO assinantePessoaFisicaDTO = new AssinantePessoaFisicaDTO(nomeEsperado, planoDTO, cpfEsperado);
-        AssinantePessoaFisicaDTO assinantePessoaFisicaDTO = new AssinantePessoaFisicaDTO();
+        AssinantePessoaFisicaDTO assinantePessoaFisicaDTO = new AssinantePessoaFisicaDTO(nomeEsperado, planoDTO, cpfEsperado);
 
         adicionaAssinante.adicionar(assinantePessoaFisicaDTO);
 

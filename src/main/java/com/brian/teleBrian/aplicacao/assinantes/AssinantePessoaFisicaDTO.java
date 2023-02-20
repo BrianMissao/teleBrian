@@ -11,6 +11,13 @@ public class AssinantePessoaFisicaDTO extends AssinanteDTO {
         super();
     }
 
+    public AssinantePessoaFisicaDTO(String nome, PlanoDTO planoDTO, String cpf) {
+        //this.nome = nome;
+        //super.planoDTO = planoDTO;
+        super(nome, planoDTO);
+        this.cpf = cpf;
+    }
+
     public String getCpf() {
         return cpf;
     }

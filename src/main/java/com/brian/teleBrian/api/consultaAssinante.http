@@ -1,3 +1,0 @@
-#GET http://localhost:8080/assinantes?nome=Cileide%20dos%20Santos
-GET http://localhost:8080/assinantes?nome=Pimpolho%20da%20Silva
-Content-Type: application/json
