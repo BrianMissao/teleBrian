@@ -1,7 +1,6 @@
 package com.brian.teleBrian.aplicacao.assinantes;
 
 import com.brian.teleBrian.aplicacao.plano.PlanoDTO;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class AssinantePessoaFisicaDTO extends AssinanteDTO {
 
@@ -12,8 +11,6 @@ public class AssinantePessoaFisicaDTO extends AssinanteDTO {
     }
 
     public AssinantePessoaFisicaDTO(String nome, PlanoDTO planoDTO, String cpf) {
-        //this.nome = nome;
-        //super.planoDTO = planoDTO;
         super(nome, planoDTO);
         this.cpf = cpf;
     }

@@ -42,7 +42,7 @@ public class ConsultaAssinanteConcretoTest extends TesteBase {
     }
 
     @Test
-    public void deveLancarExcecaoSeNaoEncontrarOAssinante() throws ExcecaoDeArgumentoInvalido {
+    public void deve_lancar_excecao_se_nao_encontrar_o_assinante() throws ExcecaoDeArgumentoInvalido {
         AssinantePessoaJuridica assinanteDoTipoPessoaJuridica = new AssinantePessoaJuridicaBuilder()
                 .comNome("Organizações Tabajara").criar();
         String nomeDoAssinanteABuscar = "José";
