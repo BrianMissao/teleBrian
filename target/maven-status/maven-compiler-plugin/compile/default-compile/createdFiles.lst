@@ -11,6 +11,7 @@ com\brian\teleBrian\infra\FuncionarioDataRepository.class
 com\brian\teleBrian\api\PlanoAPI.class
 com\brian\teleBrian\dominio\entidades\Funcionario.class
 com\brian\teleBrian\dominio\entidades\assinante\AssinanteCrudRepository.class
+com\brian\teleBrian\api\AssinanteAPI.class
 com\brian\teleBrian\aplicacao\assinantes\AssinanteDTO.class
 com\brian\teleBrian\aplicacao\funcionario\ConsultaFuncionarios.class
 com\brian\teleBrian\dominio\calculos\Calculos.class
