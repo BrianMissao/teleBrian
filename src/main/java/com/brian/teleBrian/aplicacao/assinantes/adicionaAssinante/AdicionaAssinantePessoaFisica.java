@@ -1,5 +1,7 @@
 package com.brian.teleBrian.aplicacao.assinantes.adicionaAssinante;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,7 @@ import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoIn
 import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDePlanoInesistente;
 
 @Service
+@Transactional
 @Qualifier("AdicionaAssinantePessoaFisica")
 public class AdicionaAssinantePessoaFisica implements AdicionaAssinante {
 

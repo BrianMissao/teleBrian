@@ -39,3 +39,4 @@ public class AdicionaPlanoTest extends TesteBase {
         assertThat(planosRetornados).extracting(Plano::getValor).containsExactly(valorDoPlanoEsperado);
     }
 }
+    
