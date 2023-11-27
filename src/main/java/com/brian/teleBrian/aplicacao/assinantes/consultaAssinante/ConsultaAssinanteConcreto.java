@@ -1,19 +1,22 @@
 package com.brian.teleBrian.aplicacao.assinantes.consultaAssinante;
 
+import org.springframework.stereotype.Service;
+
 import com.brian.teleBrian.dominio.entidades.assinante.Assinante;
+import com.brian.teleBrian.dominio.entidades.assinante.AssinanteCrudRepository;
 import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDeBuscaDeAssinante;
 
-import java.util.List;
-
+@Service
 public class ConsultaAssinanteConcreto implements ConsultaAssinante {
-    private List<Assinante> assinantes;
 
-    public ConsultaAssinanteConcreto(List<Assinante> assinantes) {
-        this.assinantes = assinantes;
+    private AssinanteCrudRepository assinanteCrudRepository;
+
+    public ConsultaAssinanteConcreto(AssinanteCrudRepository assinanteCrudRepository) {
+        this.assinanteCrudRepository = assinanteCrudRepository;
     }
 
     @Override
     public Assinante consultar(String nomeDoAssinanteAConsultar) throws ExcecaoDeBuscaDeAssinante {
-        return assinantes.stream().filter(assinante -> assinante.getNome().equals(nomeDoAssinanteAConsultar)).findFirst().orElseThrow(() -> new ExcecaoDeBuscaDeAssinante("Assinante não encontrado"));
+        return assinanteCrudRepository.findByNome(nomeDoAssinanteAConsultar).orElseThrow(() -> new ExcecaoDeBuscaDeAssinante("Assinante não encontrado"));
     }
 }

@@ -1,0 +1,50 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.brian:teleBrian >-------------------------
+[INFO] Building teleBrian 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ teleBrian ---
+[INFO] Deleting E:\Projetos\TeleBrian\target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ teleBrian ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 3 resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ teleBrian ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 42 source files to E:\Projetos\TeleBrian\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ teleBrian ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory E:\Projetos\TeleBrian\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ teleBrian ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 21 source files to E:\Projetos\TeleBrian\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ teleBrian ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-war-plugin:3.3.2:war (default-war) @ teleBrian ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [teleBrian] in [E:\Projetos\TeleBrian\target\teleBrian-0.0.1-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Copying webapp resources [E:\Projetos\TeleBrian\src\main\webapp]
+[INFO] Building war: E:\Projetos\TeleBrian\target\teleBrian-0.0.1-SNAPSHOT.war
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.7.7-SNAPSHOT:repackage (repackage) @ teleBrian ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ teleBrian ---
+[INFO] Installing E:\Projetos\TeleBrian\target\teleBrian-0.0.1-SNAPSHOT.war to C:\Users\Brian\.m2\repository\com\brian\teleBrian\0.0.1-SNAPSHOT\teleBrian-0.0.1-SNAPSHOT.war
+[INFO] Installing E:\Projetos\TeleBrian\pom.xml to C:\Users\Brian\.m2\repository\com\brian\teleBrian\0.0.1-SNAPSHOT\teleBrian-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.516 s
+[INFO] Finished at: 2023-10-01T19:36:41-04:00
+[INFO] ------------------------------------------------------------------------

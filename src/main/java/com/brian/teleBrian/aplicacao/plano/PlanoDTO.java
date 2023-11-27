@@ -2,7 +2,7 @@ package com.brian.teleBrian.aplicacao.plano;
 
 import java.math.BigDecimal;
 
-import com.brian.teleBrian.aplicacao.assinantes.BaseDTO;
+import com.brian.teleBrian.aplicacao.BaseDTO;
 
 public class PlanoDTO extends BaseDTO {
 

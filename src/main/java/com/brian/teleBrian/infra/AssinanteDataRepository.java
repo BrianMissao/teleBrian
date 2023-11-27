@@ -6,5 +6,5 @@ import com.brian.teleBrian.dominio.entidades.assinante.AssinanteCrudRepository;
 
 @Repository
 public interface AssinanteDataRepository extends AssinanteCrudRepository {
-    
+
 }

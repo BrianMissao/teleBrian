@@ -1,0 +1,4 @@
+POST http://localhost:8080/planos
+Content-Type: application/json
+
+{"nome": "Paga mais barato", "valor":  "200.00"}

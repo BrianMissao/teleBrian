@@ -1,0 +1,5 @@
+POST localhost:8080/assinantes/pessoaJuridica
+Content-Type: application/json
+
+
+{"planoDTO": {"id": 1}, "nome":"Pimpolho da Silva","cnpj": "32.688.946/0001-89"}{"nome": "DR. Pimpotlho", "planoDTO": {"id": 1}, "cnpj": "000.000.00-00}

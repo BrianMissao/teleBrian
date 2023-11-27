@@ -1,6 +1,6 @@
-package com.brian.teleBrian.aplicacao.assinantes;
+package com.brian.teleBrian.aplicacao;
 
-public class BaseDTO {
+public abstract class BaseDTO {
 
     private Integer id;
 
