@@ -1,9 +1,8 @@
 package com.brian.teleBrian.aplicacao.funcionario;
 
-import com.brian.teleBrian.aplicacao.BaseDTO;
-
-import javax.persistence.Column;
 import java.math.BigDecimal;
+
+import com.brian.teleBrian.aplicacao.BaseDTO;
 
 public class FuncionarioDTO extends BaseDTO {
 
@@ -11,16 +10,7 @@ public class FuncionarioDTO extends BaseDTO {
     private String cargo;
     private BigDecimal salario;
 
-
-
     public FuncionarioDTO(String nome, String cargo, BigDecimal salario) {
-        this.nome = nome;
-        this.cargo = cargo;
-        this.salario = salario;
-    }
-
-    public FuncionarioDTO(Integer id, String nome, String cargo, BigDecimal salario) {
-        super(id);
         this.nome = nome;
         this.cargo = cargo;
         this.salario = salario;
