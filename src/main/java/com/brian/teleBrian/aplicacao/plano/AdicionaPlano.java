@@ -5,8 +5,10 @@ import org.springframework.stereotype.Service;
 import com.brian.teleBrian.dominio.entidades.Plano;
 import com.brian.teleBrian.dominio.entidades.PlanoCrudRepository;
 import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class AdicionaPlano {
 
     private final PlanoCrudRepository planoCrudRepository;

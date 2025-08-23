@@ -11,9 +11,11 @@ import com.brian.teleBrian.dominio.entidades.assinante.AssinanteCrudRepository;
 import com.brian.teleBrian.dominio.entidades.assinante.AssinantePessoaFisica;
 import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDePlanoInesistente;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Qualifier("AdicionaAssinantePessoaFisica")
+@Transactional
 public class AdicionaAssinantePessoaFisica implements AdicionaAssinante {
 
     private final AssinanteCrudRepository assinanteCrudRepository;
