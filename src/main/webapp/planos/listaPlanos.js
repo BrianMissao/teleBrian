@@ -11,7 +11,6 @@ function buscarPlanos() {
         if (request.readyState === 4) {
             if (request.status == 200) {
                 exibirPlanos(request.responseText);
-                //document.getElementById('listaPlanos').innerHTML = 'finalizada a requisição, status ' + request.status;
             }
 
         }
@@ -20,13 +19,17 @@ function buscarPlanos() {
 }
 
 function exibirPlanos(planos) {
-    console.log('entrei na função');
     var planosEmJson = JSON.parse(planos);
-    console.log(planosEmJson);
-    var planosParaExibicao = '<table>';
+    if(planosEmJson) {
+        montarTabelaEExibirNoHtml(planosEmJson);
+    }
+}
+
+function montarTabelaEExibirNoHtml(planosEmJson) {
+    var tabelaDeExibicao = '<table><tr><th>nome</th><th>valor</th></tr>';
     planosEmJson.forEach(element => {
-            planosParaExibicao += `<tr><th>nome</th><th>valor</th></tr><tr><td>${element.nome}</td><td>${element.valor}</td></tr>`
+            tabelaDeExibicao += `<tr><td>${element.nome}</td><td>${element.valor}R$</td></tr>`
     });
-    planosParaExibicao += '</table>';
-    document.getElementById('listaPlanos').innerHTML = planosParaExibicao;
+    tabelaDeExibicao += '</table>';
+    document.getElementById('listaPlanos').innerHTML = tabelaDeExibicao;
 }
