@@ -1,6 +1,5 @@
 package com.brian.teleBrian.aplicacao.assinantes.adicionaAssinante;
 
-import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -13,6 +12,7 @@ import com.brian.teleBrian.dominio.entidades.assinante.AssinanteCrudRepository;
 import com.brian.teleBrian.dominio.entidades.assinante.AssinantePessoaFisica;
 import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDePlanoInesistente;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional

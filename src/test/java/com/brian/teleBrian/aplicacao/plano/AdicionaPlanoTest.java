@@ -18,7 +18,7 @@ import com.brian.teleBrian.dominio.entidades.PlanoCrudRepository;
 import com.brian.teleBrian.dominio.excecoesDeRegraDeNegocio.ExcecaoDeArgumentoInvalido;
 import com.brian.teleBrian.infra.PlanoDataRepository;
 
-public class AdicionaPlanoTest extends TesteBase {
+public class    AdicionaPlanoTest extends TesteBase {
 
     @Autowired
     private PlanoCrudRepository planoCrudRepository;
