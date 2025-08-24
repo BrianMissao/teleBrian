@@ -20,7 +20,7 @@ function buscarPlanos() {
 
 function exibirPlanos(planos) {
     var planosEmJson = JSON.parse(planos);
-    if(planosEmJson) {
+    if(planosEmJson.length > 0) {
         montarTabelaEExibirNoHtml(planosEmJson);
     }
 }
