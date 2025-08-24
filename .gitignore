@@ -23,4 +23,8 @@
 hs_err_pid*
 
 #target classes
-./target/*
+target
+
+
+#Intellij files
+.idea
