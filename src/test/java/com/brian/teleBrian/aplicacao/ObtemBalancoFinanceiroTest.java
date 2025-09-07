@@ -33,7 +33,7 @@ public class ObtemBalancoFinanceiroTest extends TesteBase {
         BigDecimal balancoEsperado = new BigDecimal("200.00");
         when(calculoDeFaturamento.calcular()).thenReturn(totalDeFaturamento.setScale(2, RoundingMode.HALF_EVEN));
         when(calculoDeGastos.calcular()).thenReturn(totalDeGastos.setScale(2, RoundingMode.HALF_EVEN));
-
+        
         BigDecimal balancoObtido = obtemBalancoFinanceiro.obter();
 
         assertThat(balancoObtido).isEqualTo(balancoEsperado);
