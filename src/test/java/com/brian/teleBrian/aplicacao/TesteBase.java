@@ -25,10 +25,12 @@ public abstract class TesteBase {
 
     @After
     public void afterClass() throws Exception {
-        List<String> tabelas = entityManager.createNativeQuery("SELECT table_name FROM INFORMATION_SCHEMA.TABLES").getResultList();
+        List<String> tabelas = entityManager.createNativeQuery("SELECT table_name FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'PUBLIC'").getResultList();
+        entityManager.createNativeQuery("SET REFERENTIAL_INTEGRITY FALSE").executeUpdate();
         for (String tabela: tabelas) {
-            entityManager.createNativeQuery("TRUNCATE TABLE "+tabela);
+            entityManager.createNativeQuery("TRUNCATE TABLE "+tabela).executeUpdate();
         }
+        entityManager.createNativeQuery("SET REFERENTIAL_INTEGRITY TRUE").executeUpdate();
         entityManager.clear();
     }
 }
